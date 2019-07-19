@@ -44,21 +44,21 @@ Following are the commands for building mosquitto publisher/subscriber example @
 
 pub_client.c
 
-gcc -c pub_client.c -I path to\mosquitto-master\mosquitto-master\lib -I path to\mosquitto-master\mosquitto-master
+	gcc -c pub_client.c -I path to\mosquitto-master\mosquitto-master\lib -I path to\mosquitto-master\mosquitto-master
 
-gcc -c client_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+	gcc -c client_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
 
-gcc -c client_props.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+	gcc -c client_props.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
 
-gcc -c pub_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+	gcc -c pub_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
 
-gcc -o mosquitto_pub.exe pub_client.o client_shared.o client_props.o pub_shared.o -l mosquitto -L path to\mosquitto 
+	gcc -o mosquitto_pub.exe pub_client.o client_shared.o client_props.o pub_shared.o -l mosquitto -L path to\mosquitto 
 
 
 sub_client.c
 
-gcc -c sub_client.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+	gcc -c sub_client.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
 
-gcc -c sub_client_output.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+	gcc -c sub_client_output.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
 
-gcc -o mosquitto_sub.exe sub_client.o client_shared.o client_props.o sub_client_output.o -l mosquitto -L path to\mosquitto
+	gcc -o mosquitto_sub.exe sub_client.o client_shared.o client_props.o sub_client_output.o -l mosquitto -L path to\mosquitto
