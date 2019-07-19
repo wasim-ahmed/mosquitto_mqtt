@@ -34,3 +34,31 @@ Current compilation is done for Windows in MinGW 4.8.1
 3.Start the mosq_pub.exe
 
 message will be received in subscriber window. Can use this piece of code in your project to integrate mosquitto. 
+
+# Additional Info (not related to this project):
+
+The github repository of mosquitto also contains elegant & standard C examples of mosquitto mqtt publisher/subscriber. 
+
+
+Following are the commands for building mosquitto publisher/subscriber example @ https://github.com/eclipse/mosquitto/tree/master/client 
+
+pub_client.c
+
+gcc -c pub_client.c -I path to\mosquitto-master\mosquitto-master\lib -I path to\mosquitto-master\mosquitto-master
+
+gcc -c client_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+
+gcc -c client_props.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+
+gcc -c pub_shared.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+
+gcc -o mosquitto_pub.exe pub_client.o client_shared.o client_props.o pub_shared.o -l mosquitto -L path to\mosquitto 
+
+
+sub_client.c
+
+gcc -c sub_client.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+
+gcc -c sub_client_output.c -I path to\mosquitto-master\mosquitto-master -I path to\mosquitto-master\mosquitto-master\lib
+
+gcc -o mosquitto_sub.exe sub_client.o client_shared.o client_props.o sub_client_output.o -l mosquitto -L path to\mosquitto
